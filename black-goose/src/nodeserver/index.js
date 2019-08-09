@@ -103,13 +103,21 @@ app.get('/zhihu', (req, respoens) => {
     });
 })
 // 根据消息的id获取消息的详细信息
-app.get("/ditail", (req, respoens) => {
-    https.get("https://news-at.zhihu.com/api/4/news/" + req.query.id, res => {
-        res.on("data", d => {
-            let data = d.toString("utf-8");
-            respoens.send(data);
-        });
-    }).on("error", e => {
-        console.error("错误：", e);
-    });
-});
+const iconv = require('iconv-lite');
+app.get('/ditail', (req, respoens) => {
+
+  https.get('https://news-at.zhihu.com/api/4/news/' + req.query.id, (res) => {
+    var chunks = [];
+    res.on('data', (d) => {
+      chunks.push(d)
+    }).on('end', function () {
+      chunks = Buffer.concat(chunks);
+      // 对二进制进行解码
+      var body = iconv.decode(chunks, 'utf-8');
+      console.log(body);
+      respoens.end(body);
+  }).on('error', (e) => {
+      console.error('错误：',e);
+    });;
+  })
+})
