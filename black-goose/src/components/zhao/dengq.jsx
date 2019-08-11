@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom'
 import axios from "axios";
 import './index.scss'
-import Dengq from './dengq';
-import Xiangqing from './xiangqing';
-export default class Zhao extends Component {
+import Xianq from './xianq';
+export default class Dengq extends Component {
     constructor() {
         super()
         this.state = {
@@ -37,11 +36,25 @@ export default class Zhao extends Component {
             // 登录前首页
             <div>
                 <BrowserRouter>
+
+                    <div className='daoh'>
+                        {
+                            this.state.daoh.map((item) => {
+                                return <div key={item.id}>
+                                    <NavLink activeClassName='aaa' to={item.url}>{item.name}</NavLink>
+                                </div>
+                            })
+                        }
+                    </div>
+
                     <main>
                         <Switch>
-                            <Route to='/' exact component={Dengq} />
-                            <Route to='/tui' component={Dengq} />
-                            <Route path='/xiangq' component={(props) => <Xiangqing data={this.state.data} />} />
+                            <Route path='/' component={(props) => {
+                                return <Xianq getDitail={this.getDitail} data={this.state.data} />
+                            }} />
+                            <Route path={`$match.url()/:id`} component={(props) => {
+                                return <Xianq getDitail={this.getDitail} data={this.state.data} />
+                            }} />
                         </Switch>
                     </main>
                 </BrowserRouter>
