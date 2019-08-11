@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.liu-nav{
+    position: relative;
+    .liu-header{
+        width: 100%;
+        height: 250px;
+        background: #0084FF;
+        position: relative;
+        color: white;
+        overflow: hidden;
+        .liu-cha{
+            font-size: 60px;
+            position: absolute;
+            top: 0px;
+            right: 30px;
+        }
+        .liu-zh{
+            font-size: 50px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .liu-fx{
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    .liu-cen{
+        padding: 20px;
+    }
+    .liu-cen ul{
+        width: 100%;
+    }
+    .liu-cen ul li{
+        height: 100px;
+        display: flex;
+        border-bottom: 1px solid #ebebeb;
+    }
+    .liu-cen ul li .liu-left{
+        display:inline-block;
+        width:30%; 
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size:50px;
+        border-right:1px solid #EBEBEB; 
+    }
+    .liu-cen ul li .liu-right{
+        display:inline-block;
+        width:70%; 
+        height: 100px;
+        display: flex;
+        input{
+            width:100%;
+            height: 100px;
+            border: none;
+            outline: none;
+        }
+    }
+    .liu-lefts{
+        width: 60%;
+        height: 100px;
+        display: flex;
+        input{
+            width:100%;
+            height: 100px;
+            border: none;
+            outline: none;
+        }
+    }
+    .liu-rights{
+        width: 40%;
+        height: 100px;
+        font-size: 30px;
+        line-height: 100px;
+        text-align: center;
+        border-radius:10px; 
+        border: 1px solid #999999;
+        cursor: pointer;
+    }
+    .liu-cen-bom{
+        margin: 25px auto;
+        width: 90%;
+        text-align: center;
+        .liu-cen-top{
+            font-size: 30px;
+            color: #999999;
+        }
+        .liu-cen-bottom{
+            font-size: 20px;
+            color: #999999;
+        }
+    }
+    .liu-btn{
+        margin: 25px auto;
+        width: 90%;
+        text-align: center;
+    }
+    .liu-btn-dl{
+        font-size: 60px;
+        background: #0084FF;
+        text-align: center;
+        border-radius:10px; 
+        color:white;
+    }
+    .liu-footer{
+        margin: 25px auto;
+        width: 90%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        .liu-footer-left{
+            font-size: 30px;
+            color: #0084FF;
+        }
+        .liu-footer-right{
+            font-size: 30px;
+            color: #0084FF;
+        }
+    }
+    .liu-bottom{
+        position: absolute;
+        top:1000px;
+        left: 200px;
+        width: 50%;
+    }
+    .liu-bootom-top{
+        color: #0084FF;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .liu-bootom-bom{
+        color: #0084FF;
+        font-size: 40px;
+        text-align: center;
+    }
+}
