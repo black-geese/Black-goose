@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom'
+import { NavLink,Switch } from 'react-router-dom'
 import axios from "axios";
 import './index.scss'
-import Xianq from './xianq';
+// import Xianq from './xianq';
+import Tou from '../../html-Xs/index'
+// import Xiangqing from './xiangqing';
 export default class Dengq extends Component {
     constructor() {
         super()
@@ -32,11 +34,12 @@ export default class Dengq extends Component {
         })
     }
     render() {
+        const { getDitail, } = this.props
+        const { top_stories } = this.state.data;
         return (
             // 登录前首页
             <div>
-                <BrowserRouter>
-
+                    <Tou />
                     <div className='daoh'>
                         {
                             this.state.daoh.map((item) => {
@@ -46,18 +49,33 @@ export default class Dengq extends Component {
                             })
                         }
                     </div>
+                {
+                    top_stories && top_stories.map(item => {
+                        return (
+                            <div onClick={() => getDitail(item.id)} key={item.id} className='item'>
+                                <NavLink to='/xiangq'>
+                                    <p>{item.title}</p>
+                                    <div style={{ background: `url(${item.image}) no-repeat` , backgroundSize: "100% 100%" }}>
+                                    </div>
+                                </NavLink>
+                            </div>
+                        );
+                    })
+                }
 
                     <main>
                         <Switch>
-                            <Route path='/' component={(props) => {
+                            {/* <Route path='/' exact component={(props) => {
                                 return <Xianq getDitail={this.getDitail} data={this.state.data} />
-                            }} />
-                            <Route path={`$match.url()/:id`} component={(props) => {
+                            }} /> */}
+                            {/* <Route path='/' exact component={(props) => {
                                 return <Xianq getDitail={this.getDitail} data={this.state.data} />
-                            }} />
+                            }} /> */}
+                            {/* <Route path='/xiangq' component={(props) => {
+                                return <Xiangqing data={this.state.data} />
+                            } }/> */}
                         </Switch>
                     </main>
-                </BrowserRouter>
             </div>
 
         )

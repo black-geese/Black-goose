@@ -4,6 +4,11 @@ import axios from "axios";
 import './index.scss'
 import Dengq from './dengq';
 import Xiangqing from './xiangqing';
+import Zuce from '../liu/liu-erji/liu-mmdl'
+import Mmdls from '../liu/liu-erji/liu-mmdls'
+import Mmdl from '../liu/liu-erji/liu-mmdl'
+import Hwdl from '../liu/liu-erji/liu-hwdl'
+import Yxdl from '../liu/liu-erji/liu-yxdl'
 export default class Zhao extends Component {
     constructor() {
         super()
@@ -39,9 +44,17 @@ export default class Zhao extends Component {
                 <BrowserRouter>
                     <main>
                         <Switch>
-                            <Route to='/' exact component={Dengq} />
-                            <Route to='/tui' component={Dengq} />
-                            <Route path='/xiangq' component={(props) => <Xiangqing data={this.state.data} />} />
+                            <Route path='/' exact component={() => {
+                                return <Dengq getDitail={this.getDitail} />
+                            }} />
+                            <Route path='/xiangq' component={(props) => {
+                                return <Xiangqing data={this.state.data} />
+                            }} />
+                            <Route path='/zuce' component={Zuce}></Route>
+                            <Route path="/mmdl" component={Mmdl} />
+                            <Route path="/mmdls" component={Mmdls} />
+                            <Route path="/hwdl" component={Hwdl} />
+                            <Route path="/yxdl" component={Yxdl} />
                         </Switch>
                     </main>
                 </BrowserRouter>

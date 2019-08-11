@@ -7,6 +7,15 @@ export default class Xiangq extends Component {
         const { top_stories } = this.props.data;
         return (
             <div>
+                <div className='daoh'>
+                        {
+                            this.state.daoh.map((item) => {
+                                return <div key={item.id}>
+                                    <NavLink activeClassName='aaa' to={item.url}>{item.name}</NavLink>
+                                </div>
+                            })
+                        }
+                    </div>
                 {
                     top_stories && top_stories.map(item => {
                         return (
