@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Html from './App';
+// import './index.css';
+// import Html from './App';
 // import Html from './components/home';
+import Html from './html-Xs/index'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Html />, document.getElementById('root'));
