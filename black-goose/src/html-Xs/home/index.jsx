@@ -8,7 +8,7 @@ export default class Home extends Component {
                                 <NavLink to='/Home'></NavLink>
                             </div>
                             <div className='tou-tu'>
-                                <NavLink to='/Sousuo'></NavLink>
+                                <NavLink to='/sousuo'></NavLink>
                             </div>
                             <div className='tou-zi'>
                                 <NavLink to='/Zuce'>登录或注册</NavLink>

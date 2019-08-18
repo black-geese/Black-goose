@@ -6,8 +6,8 @@ export default class Sousuo extends Component {
         super()
         this.state={
             text:'',
-            list:'',
-            lishi:''
+            list:[],
+            lishi:[]
         }
     }
     onHandChange=({target})=>{
