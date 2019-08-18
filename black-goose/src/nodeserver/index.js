@@ -52,18 +52,18 @@ app.all('*', function (req, res, next) { // 设置跨域白名单 可以使用co
 });
 // get用query,post用params
 // 拦截get请求
-app.get('/', (req, res) => {
-    console.log(req.query)
-    console.log(res)
-    // res.json({
-    //     name: req.query.name ? req.query : '匿名',
-    //     age: '3'
-    // })
-    res.json({
-        ip: IPv4,
-        token: 'ip+date+md5value'
-    })
-})
+// app.get('/', (req, res) => {
+//     console.log(req.query)
+//     console.log(res)
+//     // res.json({
+//     //     name: req.query.name ? req.query : '匿名',
+//     //     age: '3'
+//     // })
+//     res.json({
+//         ip: IPv4,
+//         token: 'ip+date+md5value'
+//     })
+// })
 // post请求需要额外的处理
 app.post("*", (req, res) => {
     // req.path请求的地址
@@ -120,4 +120,10 @@ app.get('/ditail', (req, respoens) => {
       console.error('错误：',e);
     });;
   })
+})
+
+// get请求
+app.get("/", (req, res) => {
+    const data = require("./json/index.json")
+    res.json(data)
 })
