@@ -1,0 +1,48 @@
+.down-box{
+    width: 100%;
+    min-height: 1334px;
+    position: relative;
+    .down-header{
+        position: absolute;
+        top: 19%;
+        width: 100%;
+        .logo{
+            width: 180px;
+            height: 84px;
+            margin-left: 285px;
+        }
+        .top{
+            margin-top: 44px;
+            p{
+                width: 100%;
+                text-align: center;
+                font-size: 32px;
+                font-weight: 300;
+                line-height: 56px;
+            }
+        }
+        .btn-down{
+            width: 490px;
+            height: 84px;
+            background: #0f88eb;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px 0 rgba(15,136,235,.1);
+            font-size: 36px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 84px;
+            border: none;
+            margin-top: 140px;
+            margin-left: 140px;
+        }
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 580px;
+        height: 384px;
+        background: url(https://www.zhihu.com/app/8f6bcb9d6c8ce269599206c90d4594f0.png) no-repeat;
+        background-size: 580px 384px;
+        background-position: 90px 0;
+    }
+}
