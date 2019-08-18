@@ -1,0 +1,101 @@
+*{
+    font-size: 16px;
+}
+.header-box{
+    width: 100%;
+    height: 104px;
+    border-bottom: 1px solid rgba(26,26,26,.06);
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .header-center{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+        .header-left{
+            display: inline-block;
+            width: 120px;
+            height: 56px;
+            background-color: red;
+            margin-top: 22px;
+            background: url(/images/zhihu-logo.png) no-repeat;
+        }
+        .header-right{
+            width: 80%;
+            height: 100%;
+            line-height: 104px;
+            .search{
+                width: 260px;
+                height: 62px;
+                border: 1px solid #EBEBEB;
+                border-radius: 30px;
+                background-color: #F1F1F1;
+                margin-top: 20px;
+                text-indent: 12px;
+                .p-box{
+                    margin-right: 6px;
+                    line-height: 62px;
+                    .icon-search{
+                        font-size: 40px;
+                        color: #999999;
+                    }
+                }
+                .search-input{
+                    width: 192px;
+                    height: 48px;
+                    border: none;
+                    margin-top: 8px;
+                    background-color: #F1F1F1;
+                    outline:none;
+                }
+            }
+            .down{
+                padding-right: 32px;
+                padding-left: 20px;
+                font-size: 32px;
+                color: #0084ff;
+            }
+            .span{
+                color: #EBEBEB;
+                padding-right: 32px;
+            }
+            .menu{
+                width: 48px;
+                height: 48px;
+                background-repeat: no-repeat;
+                background-size: 48px 48px;
+                margin-top: 28px;
+            }
+        }
+    }
+    .hide{
+        width: 100%;
+        display: none;
+        .hide-center{
+            width: 90%;
+            margin: 0 auto;
+            .h-c-ul{
+                .h-c-u-item{
+                    width: 100%;
+                    height: 112px;
+                    line-height: 112px;
+                    border-bottom: 1px solid #EBEBEB;
+                    background-color: #fff;
+                    a{
+                        i{
+                            font-size: 32px;
+                            color: #8590A6;
+                        }
+                        span{
+                            font-size: 32px;
+                            color: #444;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

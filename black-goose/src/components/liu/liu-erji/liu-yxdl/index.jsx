@@ -18,7 +18,7 @@ export default class Yxdl extends Component {
         }
     }
     onRegister = () => {
-        axios.get('http://localhost:3003/').then(res => {
+        axios.get('http://192.168.43.129:3003/').then(res => {
             const _res = res.data
             const _data = this.state
             if (this.state.Register.user === '') {
@@ -32,7 +32,7 @@ export default class Yxdl extends Component {
                 return false;
             } else if (_res.user === _data.Register.user && _res.password === _data.Register.password) {
                 alert("登录成功")
-                window.location.replace('/')
+                window.location.replace('/li')
             }
         }).catch(err => {
             alert('网络错误,数据获取失败')

@@ -40,7 +40,7 @@ export default class Dengq extends Component {
             // 登录前首页
             <div>
                     <Tou />
-                    <div className='daoh'>
+                    {/* <div className='daoh'>
                         {
                             this.state.daoh.map((item) => {
                                 return <div key={item.id}>
@@ -48,7 +48,7 @@ export default class Dengq extends Component {
                                 </div>
                             })
                         }
-                    </div>
+                    </div> */}
                 {
                     top_stories && top_stories.map(item => {
                         return (
@@ -81,3 +81,86 @@ export default class Dengq extends Component {
         )
     }
 }
+
+// import React, { Component } from 'react'
+// import { NavLink, Route, Switch } from 'react-router-dom'
+// import axios from "axios";
+// import './index.scss'
+// // import Xianq from './xianq';
+// import Tou from '../../html-Xs/index'
+// import ShouCon from './shouCon';
+// // import Xiangqing from './xiangqing';
+// export default class Dengq extends Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             daoh: [
+//                 { name: '推荐', url: '/tui', id: 0 },
+//                 { name: '生活', url: '/sheng', id: 1 },
+//                 { name: '教育', url: '/jiao', id: 2 },
+//                 { name: '娱乐', url: '/yu', id: 3 },
+//                 { name: '汽车', url: '/qi', id: 4 }
+//             ],
+//             data: ''
+//         }
+//     }
+//     componentDidMount() {
+//         axios.get("http://192.168.43.129:3003/zhihu").then(res => {
+//             this.setState({
+//                 data: res.data
+//             });
+//         })
+//     }
+//     getDitail = (id) => {
+//         axios.get('http://192.168.43.129:3003/ditail', { params: { id } }).then(res => {
+//             this.setState({
+//                 data: res.data
+//             })
+//         })
+//     }
+//     render() {
+//         return (
+//             // 登录前首页
+//             <div>
+//                 <Tou />
+//                 <div className='daoh'>
+//                     {
+//                         this.state.daoh.map((item) => {
+//                             return <div key={item.id}>
+//                                 <NavLink activeClassName='aaa' to={item.url}>{item.name}</NavLink>
+//                             </div>
+//                         })
+//                     }
+//                 </div>
+//                 <main>
+//                     <Switch>
+//                         <Route path='/' exact component={() => {
+//                             return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                         }} />
+//                         <Route path='/tui' component={() => {
+//                             return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                         }} />
+//                         <Route path='/:id' component={(props) => {
+//                             console.log(props)
+//                             switch (`${props.location.pathname}`) {
+//                                 case '/tui':
+//                                     return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                                 case '/sheng':
+//                                     return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                                 case '/jiao':
+//                                     return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                                 case '/yu':
+//                                     return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                                 case '/qi':
+//                                     return <ShouCon getDitail={this.getDitail} data={this.state.data} />
+//                                 default:
+//                                     return <p>404</p>
+//                             }
+//                         }} />
+//                     </Switch>
+//                 </main>
+//             </div>
+
+//         )
+//     }
+// }

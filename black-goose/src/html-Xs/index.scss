@@ -17,9 +17,11 @@
        .tou-logo{
         width:20%;
         height: 100%;
-        background: url('./img/1.png');
-    display: flex;
-}
+        margin-top: 15px;
+        background: url('./img/1.png') no-repeat;
+        background-size: 100px;
+        display: flex;
+    }
     .tou-tu{
         width:50%;
         height: 100%;

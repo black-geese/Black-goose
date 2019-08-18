@@ -9,9 +9,11 @@ import Mmdls from '../liu/liu-erji/liu-mmdls'
 import Mmdl from '../liu/liu-erji/liu-mmdl'
 import Hwdl from '../liu/liu-erji/liu-hwdl'
 import Yxdl from '../liu/liu-erji/liu-yxdl'
+import Sousuo from '../../html-Xs/sousuo/index';
+import Li from '../li';
 export default class Zhao extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             daoh: [
                 { name: '推荐', url: '/tui', id: 0 },
@@ -24,14 +26,14 @@ export default class Zhao extends Component {
         }
     }
     componentDidMount() {
-        axios.get("http://localhost:3003/zhihu").then(res => {
+        axios.get("http://192.168.43.129:3003/zhihu").then(res => {
             this.setState({
                 data: res.data
             });
         })
     }
     getDitail = (id) => {
-        axios.get('http://localhost:3003/ditail', { params: { id } }).then(res => {
+        axios.get('http://192.168.43.129:3003/ditail', { params: { id } }).then(res => {
             this.setState({
                 data: res.data
             })
@@ -42,19 +44,44 @@ export default class Zhao extends Component {
             // 登录前首页
             <div>
                 <BrowserRouter>
+                    {/* <Redirect from='/' to='/shouye' /> */}
+
                     <main>
                         <Switch>
                             <Route path='/' exact component={() => {
                                 return <Dengq getDitail={this.getDitail} />
                             }} />
-                            <Route path='/xiangq' component={(props) => {
-                                return <Xiangqing data={this.state.data} />
-                            }} />
-                            <Route path='/zuce' component={Zuce}></Route>
-                            <Route path="/mmdl" component={Mmdl} />
-                            <Route path="/mmdls" component={Mmdls} />
-                            <Route path="/hwdl" component={Hwdl} />
-                            <Route path="/yxdl" component={Yxdl} />
+                            <Route path='/xiangq' component={(props) => { return <Xiangqing data={this.state.data} /> }} />
+                            <Route path='/sousuo' component={Sousuo} />
+                            <Route path='/zuce' component={Zuce} />
+                            <Route path='/mmdl' component={Mmdl} />
+                            <Route path='/mmdls' component={Mmdls} />
+                            <Route path='/hwdl' component={Hwdl} />
+                            <Route path='/yxdl' component={Yxdl} />
+                            <Route path='/li' component={Li} />
+                            {/* <Route path='/:id' exact component={(props) => {
+                                console.log(props)
+                                switch (`${props.location.pathname}`) {
+                                    case '/':
+                                        return <Dengq getDitail={this.getDitail} />
+                                    case '/xiangq':
+                                        return <Xiangqing data={this.state.data} />
+                                    case '/sousuo':
+                                        return <Sousuo />
+                                    case '/zuce':
+                                        return <Zuce />
+                                    case '/mmdl':
+                                        return <Mmdl />
+                                    case '/mmdls':
+                                        return <Mmdls />
+                                    case '/hwdl':
+                                        return <Hwdl />
+                                    case '/yxdl':
+                                        return <Yxdl />
+                                    default:
+                                        break;
+                                }
+                            }} /> */}
                         </Switch>
                     </main>
                 </BrowserRouter>

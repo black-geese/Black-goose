@@ -22,13 +22,13 @@ export default class Mmdl extends Component {
         })
     }
     onHandLogin = () => {
-        axios.get('http://localhost:3003/').then(res => {
+        axios.get('http://192.168.43.129:3003/').then(res => {
             const _res = res.data
             const _data = this.state.data
             console.log(_res)
             if (_res.user === _data.user && _res.yzm === _data.yzm) {
                 alert("登录成功")
-                window.location.replace('/')
+                window.location.replace('/li')
             } else if (this.state.data.user === '') {
                 alert("手机号不能为空")
                 return false;

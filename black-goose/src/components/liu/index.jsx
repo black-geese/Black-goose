@@ -4,17 +4,16 @@ import React, { Component } from 'react'
 import Nav from './liu-nav'
 
 //引入路由
-import { BrowserRouter } from 'react-router-dom'
 
 export default class Liu extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <div>
                 
                 {/* 首页 */}
                 <Nav/>
                 
-            </BrowserRouter>
+            </div>
         )
     }
 }
