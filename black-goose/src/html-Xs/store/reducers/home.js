@@ -17,6 +17,7 @@ export default (state = defaultState, action) => {
             }
             return newState
         case 'pushhistory':
+            // eslint-disable-next-line array-callback-return
             const item = newState.searchList.find((item, index) => {
                 if (index === action.index) {
                     return item

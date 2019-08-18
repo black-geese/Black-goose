@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import axios from "axios";
-import './index.scss';
+import './index.scss'
 import Dengq from './dengq';
 import Xiangqing from './xiangqing';
-//登录组件
 import Zuce from '../liu/liu-erji/liu-mmdl'
 import Mmdls from '../liu/liu-erji/liu-mmdls'
 import Mmdl from '../liu/liu-erji/liu-mmdl'
@@ -52,7 +51,6 @@ export default class Zhao extends Component {
                             <Route path='/' exact component={() => {
                                 return <Dengq getDitail={this.getDitail} />
                             }} />
-<<<<<<< HEAD
                             <Route path='/xiangq' component={(props) => { return <Xiangqing data={this.state.data} /> }} />
                             <Route path='/sousuo' component={Sousuo} />
                             <Route path='/zuce' component={Zuce} />
@@ -84,17 +82,6 @@ export default class Zhao extends Component {
                                         break;
                                 }
                             }} /> */}
-=======
-                            <Route path='/xiangq' component={(props) => {
-                                return <Xiangqing data={this.state.data} />
-                            }} />
-                              {/* 登录组件 */}
-                            <Route path='/zuce' component={Zuce}></Route>
-                            <Route path="/mmdl" component={Mmdl} />
-                            <Route path="/mmdls" component={Mmdls} />
-                            <Route path="/hwdl" component={Hwdl} />
-                            <Route path="/yxdl" component={Yxdl} />
->>>>>>> 249c657d896071c63c0f230363851753d7c2e8f3
                         </Switch>
                     </main>
                 </BrowserRouter>
