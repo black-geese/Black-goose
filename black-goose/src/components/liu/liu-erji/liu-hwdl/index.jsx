@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 //引入axios
 import axios from 'axios'
+import Liunav from '../../liu-nav'
 
 export default class Hwdl extends Component {
     constructor(){
@@ -27,6 +28,7 @@ export default class Hwdl extends Component {
             const _data = this.state.data
             if (_res.user === _data.user && _res.yzm === _data.yzm) {
                 alert("登录成功")
+                window.location.replace('/')
             } else if (this.state.data.user === '') {
                 alert("手机号不能为空")
                 return false;
@@ -45,6 +47,7 @@ export default class Hwdl extends Component {
         const { user, yzm } = this.state.data
         return (
             <div>
+                <Liunav/>
                 <div className='liu-cen'>
                     <ul>
                         <li>

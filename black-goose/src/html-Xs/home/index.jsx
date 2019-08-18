@@ -5,7 +5,7 @@ export default class Home extends Component {
         return (
                 <div className='quan'>
                             <div className='tou-logo'>
-                                <NavLink to='/Home'></NavLink>
+                                <NavLink to='/'></NavLink>
                             </div>
                             <div className='tou-tu'>
                                 <NavLink to='/sousuo'></NavLink>

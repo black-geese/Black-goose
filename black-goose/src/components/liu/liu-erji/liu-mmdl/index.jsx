@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 //引入路由
 import { NavLink } from 'react-router-dom'
-
+import '../../liu-nav/index.scss'
 //引入axios
 import axios from 'axios'
-
+import Liunav from '../../liu-nav'
 export default class Mmdl extends Component {
     constructor(){
         super()
@@ -25,8 +25,10 @@ export default class Mmdl extends Component {
         axios.get('http://localhost:3003/').then(res => {
             const _res = res.data
             const _data = this.state.data
+            console.log(_res)
             if (_res.user === _data.user && _res.yzm === _data.yzm) {
                 alert("登录成功")
+                window.location.replace('/')
             } else if (this.state.data.user === '') {
                 alert("手机号不能为空")
                 return false;
@@ -45,6 +47,7 @@ export default class Mmdl extends Component {
         const { user, yzm } = this.state.data
         return (
             <div>
+                <Liunav/>
                 <div className='liu-cen'>
                         <ul>
                             <li>
